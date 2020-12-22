@@ -1,0 +1,49 @@
+<view>
+	<view class="sliders">
+		<swiper
+		 class=""
+		 indicator-dots="{{true}}"
+		 autoplay="{{true}}"
+		 interval="5000"
+		 duration="1000"
+		 circular="{{true}}"
+		>
+			<swiper-item wx:for="{{slides}}" wx:key="id">
+				<image src="{{item.image}}" mode="widthFix" />
+			</swiper-item>
+			<!-- <swiper-item>
+				<image src="/assets/images/banner-01.png" mode="widthFix" />
+			</swiper-item> -->
+		</swiper>
+	</view>
+	<view class="grids">
+		<van-grid column-num="3">
+			<van-grid-item
+			 wx:for="{{categories}}"
+			 wx:key="id"
+			 icon="{{item.icon}}"
+			 text="{{item.name}}"
+			 url="/pages/list/list?category={{item.id}}&name={{item.name}}"
+			></van-grid-item>
+			<!-- <van-grid-item icon="/assets/icons/grid-01.png" text="美食" />
+			<van-grid-item icon="/assets/icons/grid-02.png" text="结婚啦" />
+			<van-grid-item icon="/assets/icons/grid-03.png" text="卡拉OK" />
+			<van-grid-item icon="/assets/icons/grid-04.png" text="找工作" />
+			<van-grid-item icon="/assets/icons/grid-05.png" text="辅导班" />
+			<van-grid-item icon="/assets/icons/grid-06.png" text="汽车保养" />
+			<van-grid-item icon="/assets/icons/grid-07.png" text="租房" />
+			<van-grid-item icon="/assets/icons/grid-08.png" text="装修" />
+			<van-grid-item icon="/assets/icons/grid-09.png" text="更多" /> -->
+		</van-grid>
+	</view>
+	<view class="enter">
+		<navigator class="item">
+			<image src="/assets/images/link-01.png" mode="widthFix" />
+		</navigator>
+		<navigator class="item">
+			<image src="/assets/images/link-02.png" mode="widthFix" />
+		</navigator>
+
+	</view>
+</view>
+

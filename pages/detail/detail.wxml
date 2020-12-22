@@ -1,0 +1,62 @@
+<wxs module="imgutil">
+	module.exports = {
+	size: function(input) {
+	return input.replace("w.h", "100.100")
+	},
+	sizeArr:function(urls){
+	for(var i=0;i
+	<urls.length;i++)
+	 {
+	 urls[i]=urls[i].replace("w.h","100.100");
+	 }
+	 return
+	 urls;
+	 }
+	 }
+	 </wxs>
+	 <swiper
+	 class="slider"
+	 autoplay="{{true}}"
+	 interval="5000"
+	 duration="1000"
+	>
+		<block wx:for="{{shop.images}}" wx:key="unique">
+			<swiper-item>
+				<image
+				 bindtap="preview"
+				 data-src="{{item}}"
+				 src="{{item}}"
+				 class="slide-image"
+				/>
+			</swiper-item>
+		</block>
+		</swiper>
+		<view class="product">
+			<text class="pro-name">{{shop.name}}</text>
+			<text class="pro-phone">电话：{{shop.phone}}</text>
+			<text class="pro-address">地址：{{shop.address}}</text>
+			<text class="pro-time">营业时间：{{shop.time}}</text>
+		</view>
+		<view class="comments">
+			<view
+			 class="item"
+			 wx:for="{{shop.comments}}"
+			 wx:key="unique"
+			>
+				<text class="name">{{item.name}}</text>
+				<text class="date">{{item.date}}</text>
+				<text class="rating">{{item.rating}}</text>
+				<text class="content">{{item.content}}</text>
+				<view class="images">
+					<image
+					 wx:for="{{item.images}}"
+					 wx:key="unique"
+					 wx:for-item="v"
+					 src="{{imgutil.size(v)}}"
+					 bindtap="preview"
+					 data-src="{{imgutil.sizeArr(item.images)}}"
+					/>
+				</view>
+			</view>
+		</view>
+

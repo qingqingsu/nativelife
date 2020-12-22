@@ -1,0 +1,17 @@
+<view class="box">
+	<block wx:for="{{messages}}" wx:key="date">
+		<van-panel title="{{item.title}}" desc="{{item.date}}">
+			<view class="content">
+				<image
+				 mode="widthFix"
+				 src="{{item.image}}"
+				 lazy-load="{{false}}"
+				/>
+				<text>{{item.summary}}</text>
+			</view>
+		</van-panel>
+	</block>
+
+</view>
+<view id="bottom"></view>
+
